@@ -1,47 +1,48 @@
 // import logo from "./logo.svg";
 import "./App.css";
+import { useState } from "react";
+// function add() {
+//   return (
+//     <b1>
+//       <h1>Hello $name</h1>
+//     </b1>
+//   );
+// }
 
-function add() {
+const Counter = () => {
+  const [count, setCount] = useState(1);
+  // const count = 1;
+  console.log(count);
+  console.log(setCount);
+  const incrementCount = () => {
+    setCount((count + 1) % 8);
+  };
+
   return (
-    <b1>
-      <h1>Hello $name</h1>
-    </b1>
+    <>
+      <h1>Counter value is {count}</h1>
+      <button onClick={incrementCount}> Increment</button>
+    </>
   );
-}
+};
 
-const Greeting = (probs) => {
-  console.log(probs);
-
+const Greeting = ({ name, age, ...rest }) => {
+  console.log(rest);
   return (
-    <h1>
-      Welcome, {probs.name} (your age is {probs.age})
-    </h1>
+    <>
+      <h1>
+        Welcome, {name} (your age is {age})
+      </h1>
+      <h3>by HRV</h3>
+    </>
   );
 };
 
 function App() {
-  // return (
-  //   <div className="App">
-  //     <header className="App-header">
-  //       <img src={logo} className="App-logo" alt="logo" />
-  //       {/* <p>
-  //         Edit <code>src/App.js</code> and save to reload.
-  //       </p>
-  //       <a
-  //         className="App-link"
-  //         href="https://reactjs.org"
-  //         target="_blank"
-  //         rel="noopener noreferrer"
-  //       >
-  //         Learn React
-  //       </a> */}
-  //     </header>
-  //   </div>
-  // );
-
   return (
     <div>
-      <Greeting name="Alice" age={30}></Greeting>
+      {/* <Greeting name="Alice" age={30} gender="f"></Greeting> */}
+      <Counter></Counter>
     </div>
   );
 }
