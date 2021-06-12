@@ -55,8 +55,10 @@ const Counter = () => {
 
   return (
     <>
+      <h1>Sqrt Counter</h1>
       <h1>
-        Counter1 value is {count.count1} & Counter2 value is {count.count2}
+        Counter1 value is {Math.sqrt(count.count1)} & Counter2 value is{" "}
+        {Math.sqrt(count.count2)}
       </h1>
       <button onClick={incrementCount1}> Increment1</button>
       <p></p>
